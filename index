@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code Generator</title>
+</head>
+<body>
+    <h1>QR Code Generator</h1>
+    <form action="/" method="post">
+        Data: <input type="text" name="data" required><br>
+        Filename (without extension): <input type="text" name="filename" required><br>
+        <input type="submit" value="Generate QR Code">
+    </form>
+    {% if png_link and svg_link %}
+    <h2>Download QR Code</h2>
+    <a href="{{ png_link }}" download>Download PNG</a><br>
+    <a href="{{ svg_link }}" download>Download SVG</a>
+    {% endif %}
+</body>
+</html>
